@@ -1,0 +1,26 @@
+<label> Task:
+    <input type="text" name="taskname" class="form-control" value="" [(ngModel)]="taskName">
+  </label>
+  <br>
+  <label> Priority:
+    <input type="text" name="priority" class="form-control" value="" [(ngModel)]="taskPriority">
+  </label>
+<br>
+  <button class="btn btn-primary" type="reset" name="addTaskButton" (click)="onAddTask($event)" [disabled]="!buttonEnabled">Add Task</button>
+
+  <p>{{numberOfTasks}} Task/Tasks Added</p>
+
+  <table class="table">
+      <tr>
+          <th scope="col">
+              Task Name
+          </th>
+          <th scope ="col">
+              Task Priority
+          </th>
+      </tr>
+
+      <!-- <tr *ngFor="let task of taskItemList; let i=index"></tr>
+      <td>{{taskItemList[i]}}</td>
+      <td>{{taskItemList[i]}}</td> -->
+  </table>
