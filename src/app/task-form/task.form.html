@@ -20,7 +20,8 @@
           </th>
       </tr>
 
-      <!-- <tr *ngFor="let task of taskItemList; let i=index"></tr>
-      <td>{{taskItemList[i]}}</td>
-      <td>{{taskItemList[i]}}</td> -->
+      <tr *ngFor="let task of taskItemList; let i=index">
+      <td>{{task.taskName}}</td>
+      <td>{{task.taskPriority}}</td>
+    </tr>
   </table>
