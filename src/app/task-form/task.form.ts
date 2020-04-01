@@ -9,6 +9,7 @@ templateUrl:'./task.form.html'
 export class taskFormComponent{
 
     buttonEnabled:boolean=false;
+    ItemName:string;
     constructor()
   {
     setTimeout(()=>{this.buttonEnabled=true},2000);
@@ -17,6 +18,7 @@ export class taskFormComponent{
   taskName:string='';
   taskPriority:string='';
   numberOfTasks:number=0;
+  tasksPresent:boolean=false;
   taskItemList:taskItem[]=[];
 
   onAddTask(event:any){
@@ -26,6 +28,7 @@ export class taskFormComponent{
     if (this.taskName !="" && this.taskPriority!="")
     {
       this.taskItemList.push(new taskItem(this.taskName,this.taskPriority));
+      this.tasksPresent=true;
     }
 
     else
@@ -39,5 +42,13 @@ export class taskFormComponent{
     
 
   }
+
+  onTLC(event)
+  {
+  alert (event.ItemName);
+  //   console.log(ItemName);
+  //
+  console.log(event); 
+}
   
 }

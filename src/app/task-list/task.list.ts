@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input,Output, EventEmitter } from "@angular/core";
+import { taskItem } from '../task-item/task.item';
 
 @Component({
     selector:'task-list',
@@ -6,5 +7,20 @@ import { Component } from "@angular/core";
 })
 
 export class taskListComponent{
-    taskList='This is the list of tasks';
+
+    // @Output() taskCalled = new EventEmitter<{ItemName:string}>();
+    @Output() taskCalled = new EventEmitter();
+    
+    @Input() taskItemName :string ='o';
+    @Input('tip') taskItemPriority :string='o';
+
+    ItemName:string;
+
+    onChildButtonClicked()
+    {
+        this.ItemName='Candida';
+        this.taskCalled.emit({ItemName:this.ItemName});
+    }
+   
+
 }

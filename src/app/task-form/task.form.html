@@ -21,7 +21,13 @@
       </tr>
 
       <tr *ngFor="let task of taskItemList; let i=index">
-      <td>{{task.taskName}}</td>
-      <td>{{task.taskPriority}}</td>
-    </tr>
+          <td>{{task.taskName}}</td>
+          <td>{{task.taskPriority}}</td>
+      
+      </tr>
   </table>
+  <!-- <task-list></task-list>
+  <task-list [taskItemName]="'a'" [tip]="'b'"></task-list> -->
+  <task-list (taskCalled)="onTLC($event)"></task-list>
+  
+  
