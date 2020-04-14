@@ -1,3 +1,9 @@
+<style>
+/* p
+{
+    color: blueviolet;
+} */
+</style>
 <label> Task:
     <input type="text" name="taskname" class="form-control" value="" [(ngModel)]="taskName">
   </label>
@@ -21,13 +27,16 @@
       </tr>
 
       <tr *ngFor="let task of taskItemList; let i=index">
-          <td>{{task.taskName}}</td>
-          <td>{{task.taskPriority}}</td>
-      
+          <td priorityStyle>{{task.taskName}}</td>
+          <td [ngStyle]="{'color':task.taskPriority=='high'?'red':'blue'}">{{task.taskPriority}}</td>
       </tr>
   </table>
-  <!-- <task-list></task-list>
-  <task-list [taskItemName]="'a'" [tip]="'b'"></task-list> -->
-  <task-list (taskCalled)="onTLC($event)"></task-list>
+  
+  
+  <!--<task-list [taskItemName]="'a'" [tip]="'b'"></task-list> -->
+  <!-- <task-list (abc)="onTLC($event)"></task-list> -->
+
+  <!-- <p *appUnless ="true">This will not work</p>
+  <p *appUnless="false">This will work</p> -->
   
   

@@ -1,2 +1,17 @@
-<em>You have added task:{{taskItemName}} with priority: {{taskItemPriority}}</em> <br>
-<button class="btn btn-danger" (click)="onChildButtonClicked()">Child button</button>
+<!-- <p><em taskStyle> have added task:{{taskItemName}} with priority: {{taskItemPriority}}</em></p> <br>
+<button class="btn btn-danger" (click)="onChildButtonClicked()">Child button</button> -->
+<table class="table">
+    <tr>
+        <th scope="col">
+            Task Name
+        </th>
+        <th scope ="col">
+            Task Priority
+        </th>
+    </tr>
+
+    <tr *ngFor="let taskItem of totalItemsList">
+        <td>{{taskItem.taskName}}</td>
+        <td>{{taskItem.taskPriority}}</td>
+    </tr>
+</table>
